@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin Offerings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .digitaltwins-container {
+            max-width: 100%;
+            margin: auto;
+            padding: 5%;
+        }
+
+        .digitaltwins-section-title {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 28.8px;
+            color: #5107B8;
+            margin-bottom: 20px;
+        }
+
+        /* Cards Layout */
+        .digitaltwins-cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            /* padding: 5%; */
+        }
+
+        .digitaltwins-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            /* min-width: 300px; */
+        }
+
+        .digitaltwins-card h3 {
+            font-size: 16px;
+            line-height: 22.4px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .digitaltwins-card ul {
+            padding-left: 20px;
+        }
+
+        .digitaltwins-card ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Benefits Section */
+        .digitaltwins-benefits {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .digitaltwins-benefits-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .digitaltwins-benefit {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .digitaltwins-benefit h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .digitaltwins-benefit p {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        /* Vertical Line between Benefits */
+        .digitaltwins-benefit:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background-color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .digitaltwins-cards {
+                flex-direction: column;
+                /* padding: 5%; */
+            }
+
+            .digitaltwins-benefits-container {
+                flex-direction: column;
+            }
+
+            .digitaltwins-benefit {
+                padding: 20px 0; /* Add padding for spacing */
+                text-align: center;
+            }
+
+            .digitaltwins-benefit:not(:last-child)::after {
+                width: 100%;
+                height: 1px;
+                top: auto;
+                bottom: 0;
+                right: auto;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="digitaltwins-container">
+        <div class="digitaltwins-section-title">Our Digital Twin Offerings</div>
+        <div class="digitaltwins-cards">
+            <div class="digitaltwins-card">
+                <h3>1. Live Asset Tracking & Remote Monitoring</h3>
+                <p>Gain real-time visibility into equipment, infrastructure, and processes with AI-powered Digital Twins, reducing downtime and optimizing operational efficiency.</p>
+                <b>a. Industries</b>
+                <ul>
+                    <li><b>Manufacturing:</b> Monitor factory machinery, optimize workflows, and predict failures.</li>
+                    <li><b>Energy & Utilities:</b> Track power grids, pipelines, and renewable energy sources.</li>
+                    <li><b>Smart Cities:</b> Improve traffic management and urban planning.</li>
+                </ul>
+                <b>b. Example:</b> AI-driven predictive maintenance for industrial machinery reduces unexpected failures by <b>40%.</b>
+            </div>
+            <div class="digitaltwins-card">
+                <h3>2. AI-Powered Forecasting & Risk Mitigation</h3>
+                <p>Enhance decision-making with AI-based simulations that predict failures, analyze trends, and mitigate risks before they occur.</p>
+                <b>a. Industries</b>
+                <ul>
+                    <li><b>Construction & Real Estate:</b> Forecast structural integrity and optimize resource allocation.</li>
+                    <li><b>Logistics & Supply Chain:</b> Predict demand fluctuations, optimize inventory, and prevent disruptions.</li>
+                    <li><b>Healthcare:</b> Simulate patient flow and optimize hospital resource management.</li>
+                </ul>
+                <b>b. Example:</b> AI-powered Digital Twins predict supply chain bottlenecks, reducing delays by <b>30%.</b>
+            </div>
+            <div class="digitaltwins-card">
+                <h3>3. Interactive 3D Modeling & Simulation-Based Testing</h3>
+                <p>Develop high-fidelity 3D environments to simulate real-world scenarios, test new strategies, and optimize performance in a risk-free digital space.</p>
+                <b>a. Industries</b>
+                <ul>
+                    <li><b>Automotive & Aerospace:</b> Simulate vehicle performance under different conditions.</li>
+                    <li><b>Retail & E-Commerce:</b> Create virtual store layouts and optimize customer experience.</li>
+                    <li><b>Defense & Security:</b> Train personnel with hyper-realistic mission simulations.</li>
+                </ul>
+                <b>b. Example:</b> Automotive companies reduce prototyping costs by <b>50%</b> using Digital Twin simulations before production.
+            </div>
+        </div>
+
+        <div class="digitaltwins-section-title">Benefits of AI-Powered Digital Twins</div>
+        <div class="digitaltwins-benefits">
+            <div class="digitaltwins-benefits-container">
+                <div class="digitaltwins-benefit">
+                    <h4>Real-Time Operational Insights:</h4>
+                    <p>Monitor assets, detect anomalies, and optimize performance.</p>
+                </div>
+                <div class="digitaltwins-benefit">
+                    <h4>Cost Savings & Risk Reduction:</h4>
+                    <p>Identify inefficiencies and mitigate risks before they escalate.</p>
+                </div>
+                <div class="digitaltwins-benefit">
+                    <h4>Data-Driven Decision-Making:</h4>
+                    <p>AI-powered simulations help businesses make smarter, more informed decisions.</p>
+                </div>
+                <div class="digitaltwins-benefit">
+                    <h4>Data-Driven Decision-Making:</h4>
+                    <p>AI-powered simulations help businesses make smarter, more informed decisions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
