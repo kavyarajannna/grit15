@@ -1,105 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+        <title>FAQ Section</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    
+        <link rel="icon" type="image/png" href="header.jpg"> <!-- Favicon -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    
+    
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Inter', sans-serif;
+            }
+
+            html,
+            body {
+                overflow-x: hidden;
+                width: 100%;
+            }
 
 
-    <link rel="icon" type="image/png" href="header.jpg"> <!-- Favicon -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 50px;
+                position: relative;
+                background-color: white;
+                z-index: 1000;
+            }
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <title>Privacy Policy</title>
-    <style>
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+            .menu-icon {
+                display: none;
+                font-size: 30px;
+                cursor: pointer;
+                color: black;
+            }
 
-        html,
-        body {
-            overflow-x: hidden;
-            width: 100%;
-        }
+            nav {
+                display: flex;
+                align-items: center;
+            }
 
-        header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 81%); /* Semi-transparent black */
-    backdrop-filter: blur(10px); /* Blur effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    z-index: 1000;
-}
+            nav a {
+                font-weight: 400;
+                margin: 0 15px;
+                color: black;
+                text-decoration: none;
+                font-size: 15px;
+                line-height: 24px;
+                position: relative;
+            }
 
-
-        header.scrolled {
-            background-color: white;
-            color: black;
-        }
-
-        header.scrolled nav a {
-            color: black;
-        }
-
-        .menu-icon {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-            color: white;
-            /* Default color before scrolling */
-            transition: color 0.3s ease;
-            /* Smooth transition */
-        }
-
-        header.scrolled .menu-icon {
-            color: black;
-            /* Change to black when scrolled */
-        }
-
-
-
-
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            font-weight: 400;
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            line-height: 24px;
-            position: relative;
-        }
-
-        nav a:hover::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            width: 100%;
-            height: 2px;
-            background-color: #5107B8;
-        }
-
-        nav a.cta-button {
+            nav a:hover::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -3px;
+                width: 100%;
+                height: 2px;
+                background-color: #5107B8;
+            }
+            nav a.cta-button {
             background-color: #5107B8;
             color: white !important;
             padding: 10px 20px;
@@ -138,215 +114,326 @@
         nav a.cta-button:active {
             transform: scale(0.95);
         }
+            @media (max-width: 768px) {
+                header {
+                    padding: 10px 20px;
+                }
 
+                .menu-icon {
+                    display: block;
+                }
 
-        @media (max-width: 768px) {
-            header {
-                padding: 10px 20px;
+                #nav-menu {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    background-color: white;
+                    height: 100%;
+                    width: 250px;
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 20px;
+                }
+
+                #nav-menu a {
+                    color: black;
+                    margin-bottom: 20px;
+                }
+
+                #nav-menu.open {
+                    transform: translateX(0);
+                }
+
+                .close-menu {
+                    font-size: 30px;
+                    color: black;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                }
             }
 
-            .menu-icon {
-                display: block;
+            @media (min-width: 769px) {
+                .close-menu {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .desktop-home {
+                    display: none;
+                }
+            }
+
+            @media (min-width: 769px) {
+                .mobile-home {
+                    display: none;
+                }
+            }
+
+
+            .faq-container {
+                padding: 1% 5%;
+                max-width: 100%;
+                border-radius: 8px;
+            }
+
+            .faq-container h1 {
+
+                /* font-family: "Bower", Georgia, "Times New Roman", serif; */
+                font-size: 24px;
+                line-height: 28.8px;
+                letter-spacing: -0.02em;
+                /* Reduces letter spacing by 2% */
+                color: #5107B8;
+                text-align: left;
+                margin-bottom: 4rem;
+                font-weight: 800;
 
             }
 
-            #nav-menu {
-                position: fixed;
-                top: 0;
-                right: 0;
-                background-color: white;
-                height: 100%;
-                width: 250px;
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
+            .faq-categories {
                 display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 20px;
+                flex-wrap: wrap;
+                gap: 10px;
+                padding-bottom: 10px;
+                justify-content: center;
             }
 
-            #nav-menu a {
-                color: black;
-                margin-bottom: 20px;
-            }
-
-            #nav-menu.open {
-                transform: translateX(0);
-            }
-
-            .close-menu {
-                font-size: 30px;
-                color: black;
-                cursor: pointer;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .close-menu {
-                display: none;
-            }
-        }
-
-        /* Hide home icon on mobile, show text */
-        @media (max-width: 768px) {
-            .desktop-home {
-                display: none;
-            }
-        }
-
-        /* Hide home text on desktop, show icon */
-        @media (min-width: 769px) {
-            .mobile-home {
-                display: none;
-            }
-        }
-
-        /* Keep original design */
-        .product-suite h1,
-        .text-box h2 {
-            opacity: 0;
-            transform: translateY(20px);
-            /* Smooth entry */
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        /* Reveal effect */
-        .product-suite h1.reveal,
-        .text-box h2.reveal {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        .hero-section {
-            text-align: center;
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 20px;
-            padding-bottom: 60px;
-            padding-left: 10%;
-            padding-right: 20%;
-
-            /* Add a black gradient at the top */
-            background: linear-gradient(to bottom, rgb(0 0 0 / 93%) 0%, rgba(0, 0, 0, 0) 40%);
-        }
-
-
-        .hero-background img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .hero-section h1,
-        .hero-section h3,
-        .hero-section p {
-            opacity: 0;
-            /* Initially hidden */
-            transform: translateY(30px);
-            /* Move down initially */
-            animation: fadeInUp 1.2s ease-out forwards;
-            /* Smooth reveal */
-        }
-
-        .hero-section h1 {
-            text-shadow: 2px 2px 4px rgb(0, 0, 0);
-            text-align: left;
-            color: white;
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 57.6px;
-        }
-
-        .hero-section p {
-            text-shadow: 2px 2px 4px rgb(0, 0, 0);
-            line-height: 24px;
-            font-weight: 400;
-            text-align: left;
-            color: white;
-            margin-top: 10px;
-            font-size: 20px;
-            opacity: 0.8;
-        }
-
-        /* Keyframes for Text Reveal Effect */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding-right: 10%;
-                /* Reduce right padding for smaller screens */
-            }
-
-            .hero-section h1 {
-                font-size: 32px;
-                line-height: 40px;
-            }
-
-            .hero-section p {
+            .faq-categories div {
+                background: #f3f3f3;
+                padding: 10px 15px;
+                font-weight: 600;
+                text-align: center;
+                border-radius: 5px;
                 font-size: 16px;
-                line-height: 22px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-section {
-                padding-right: 8%;
-                /* Further reduce right padding for mobile */
+                line-height: 22.4px;
+                flex: 1;
+                /* font-family: "McKinsey Sans", "Helvetica Neue", Calibri, Corbel, Helvetica, Roboto, Droid, sans-serif; */
+                min-width: 180px;
+                cursor: pointer;
+                transition: background 0.3s ease;
             }
 
-            .hero-section h1 {
-                font-size: 28px;
-                line-height: 36px;
+            .faq-categories div:hover {
+                background: #ddd;
             }
 
-            .hero-section p {
-                font-size: 14px;
-                line-height: 20px;
+            .faq-title {
+                color: #5107B8;
+                letter-spacing: -0.02em;
+                /* Reduces letter spacing by 2% */
+                font-weight: 800;
+                /* font-family: "Bower", Georgia, "Times New Roman", serif; */
+                line-height: 28.8px;
+                font-size: 24px;
+                margin-top: 70px;
+
             }
-        }
+
+            .faq-item {
+                margin: 15px 0;
+                padding: 15px;
+            }
+
+            .faq-item h3 {
+                font-weight: 700;
+                margin-bottom: 1%;
+                /* font-family: "Bower", Georgia, "Times New Roman", serif; */
+                line-height: 24px;
+                font-size: 20px;
+                color: #000000;
+            }
+
+            .faq-item p {
+                margin: 5px 0;
+                font-size: 20px;
+                line-height: 24px;
+                font-weight: 400;
+                /* font-family: "McKinsey Sans", "Helvetica Neue", Calibri, Corbel, Helvetica, Roboto, Droid, sans-serif; */
+
+                color: #000000;
+                padding-left: 2rem;
+            }
 
 
-        .demo-button {
-            background-color: #7e00ff;
-            color: white;
-            padding: 15px 40px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+
+            .industries {
+                max-width: 600px;
+                /* Adjust as needed */
+                margin: 0 auto;
+                /* Center the text */
+                text-align: left;
+                /* Align text properly */
+                white-space: normal;
+                /* Ensure wrapping */
+                word-break: break-word;
+                /* Prevent overflow issues */
+            }
 
 
-        .future-proof-section {
+            .global-partner-wrapper {
+                max-width: 600px;
+                /* Set a max width */
+                margin-left: 2rem;
+                /* Adjust margin for proper alignment */
+            }
+
+            .global-partners {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                /* Add spacing between items */
+                align-items: center;
+                justify-content: flex-start;
+                /* Align content to the left */
+            }
+
+            .global-partners span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                /* Adjust spacing between flag and text */
+                white-space: nowrap;
+                /* Prevent text from breaking into multiple lines */
+            }
+
+            .global-partners img {
+                width: 20px;
+                height: 15px;
+            }
+
+
+
+
+            /* Button Styling */
+            button {
+                background-color: #5107B8;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                font-size: 1rem;
+                font-weight: bold;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s ease, transform 0.2s ease;
+                margin-top: 10px;
+            }
+
+            /* Default: Button Left-Aligned */
+            .faq-item .btn-container {
+                text-align: left;
+            }
+
+            /* Button Hover Effect */
+            button:hover {
+                background-color: #6a0dad;
+                transform: scale(1.05);
+            }
+
+            /* Center Button on Small Screens */
+            @media (max-width: 1024px) {
+                .faq-item .btn-container {
+                    text-align: center;
+                }
+            }
+
+
+            /* List Item Styling */
+            ul {
+                padding-left: 2rem;
+            }
+
+            li {
+                list-style-type: none;
+                font-size: 1rem;
+                color: #000000;
+                position: relative;
+                padding-left: 25px;
+                margin-bottom: 8px;
+            }
+
+            li::before {
+                content: "•";
+                color: black;
+                font-size: 1.2rem;
+                font-weight: bold;
+                position: absolute;
+                left: 0;
+                top: 2px;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+
+
+                .faq-categories {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .faq-categories div {
+                    width: 100%;
+                    max-width: 400px;
+                }
+
+                .faq-title {
+                    font-size: 1.4rem;
+                    text-align: left;
+                }
+
+                .faq-item {
+                    text-align: left;
+                }
+
+
+            }
+
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                .faq-title {
+                    font-size: 1.3rem;
+                }
+
+                .faq-item {
+                    text-align: justify;
+                    padding: 10px;
+                }
+
+                .faq-item h3 {
+                    font-size: 1.1rem;
+                }
+
+                .faq-item p {
+                    text-align: justify;
+                    font-size: 0.95rem;
+                    padding-left: 1rem;
+                }
+
+                ul {
+                    padding-left: 1rem;
+                }
+
+                button {
+                    font-size: 0.95rem;
+                    padding: 10px 20px;
+                }
+            }
+
+            .future-proof-section {
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 40vh;
+            height: 516px;
             padding: 20px;
             text-align: center;
         }
@@ -358,41 +445,48 @@
         }
 
         .future-proof-section .headline60 {
-            font-size: 2vw;
-            /* Responsive font size */
-            font-weight: bold;
+            font-weight: 900;
+            line-height: 1.2;
+            font-size: 32px;
             color: #000000;
         }
 
-        .future-proof-section .subtext60 {
-            font-weight: bold;
-            font-size: 2vw;
-            color: #000000;
-            margin-top: 10px;
+        .future-proof-section .headline60 span {
+            display: block;
         }
 
         .future-proof-section .button60 {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: #5107B8;
             color: white;
-            padding: 12px 28px;
-            font-size: 1.5vw;
-            font-weight: 600;
+            width: 432px;
+            height: 72px;
+            font-size: 14px;
+            font-weight: 900;
             text-transform: uppercase;
-            border-radius: 5px;
-            margin-top: 15px;
+            border-radius: 4px;
+            margin-top: 30px;
             text-decoration: none;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: background-color 0.3s, transform 0.2s, color 0.3s, border 0.3s;
+            gap: 30px;
+            border: 2px solid #5107B8;
         }
 
         .future-proof-section .button60:hover {
-            background-color: #3a006e;
+            background-color: white;
+            color: #5107B8;
+            border: 2px solid #5107B8;
+        }
+
+        .future-proof-section .button60 .arrow {
+            transition: transform 0.3s ease-in-out;
         }
 
         .future-proof-section .button60:hover .arrow {
             transform: translateX(5px);
-            transition: transform 0.3s ease-in-out;
         }
 
         /* Responsive adjustments */
@@ -406,13 +500,11 @@
                 font-size: 5vw;
             }
 
-            .future-proof-section .subtext60 {
-                font-size: 4vw;
-            }
-
             .future-proof-section .button60 {
                 font-size: 4vw;
                 padding: 10px 20px;
+                width: 80%;
+                height: auto;
             }
         }
 
@@ -430,25 +522,29 @@
                 font-size: 6vw;
             }
 
-            .future-proof-section .subtext60 {
-                font-size: 4.5vw;
-            }
-
             .future-proof-section .button60 {
-                font-size: 4vw;
-                padding: 8px 15px;
-                /* Reduce padding */
-                max-width: 90%;
-                /* Prevent overflow */
-                width: auto;
-                /* Let it fit content */
-                display: block;
-                /* Full width if needed */
-                margin: 10px auto;
-                /* Center button */
-                text-align: center;
+                font-size: 3.5vw;
+                width: 100%;
+                height: auto;
             }
         }
+
+/* Keep original design */
+.faq-container h1,
+.faq-title {
+            opacity: 0;
+            transform: translateY(20px);
+            /* Smooth entry */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        /* Reveal effect */
+        .faq-container h1.reveal,
+        .faq-title.reveal {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
 
 
         .footer {
@@ -843,40 +939,37 @@
                 align-items: flex-start;
             }
         }
+            .container {
+                padding: 5%;
 
-        .under-development {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            padding: 5% 0;
-        }
-        .under-development-container {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            animation: under-development-bounce 2s infinite;
-        }
-        @keyframes under-development-bounce {
-            0%, 100% {
-                transform: translateY(0);
+                margin: auto;
             }
-            50% {
-                transform: translateY(-10px);
+
+            .header-section {
+                border-left: 16px solid #5107B8;
+                padding-left: 10px;
             }
-        }
-        .under-development-container h1 {
-            color: #333;
-        }
-        .under-development-container p {
-            color: #666;
-        }
-        .mobile-only {
+
+            .header-section h1 {
+                font-size: 48px;
+                /* font-family: "Bower", Georgia, "Times New Roman", serif; */
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                /* Reduces letter spacing by 2% */
+                color: #5107B8;
+                line-height: 57.6px;
+                padding-bottom: 1rem;
+            }
+
+            .header-section p {
+                font-style: italic;
+                color: #000000;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22.4px;
+                /* font-family: "McKinsey Sans", "Helvetica Neue", Calibri, Corbel, Helvetica, Roboto, Droid, sans-serif; */
+            }
+            .mobile-only {
             display: none;
             /* Hide by default */
         }
@@ -887,14 +980,70 @@
                 /* Show only on mobile */
             }
         }
-    </style>
-</head>
+            /* Responsive Under Construction Section */
+        .hello-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            padding: 20px;
+            background: linear-gradient(135deg, #5a0fc8, #8a2be2);
+            color: white;
+            text-align: center;
+        }
+
+        .hello {
+            padding: 20px 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            animation: pulse 1.5s infinite alternate ease-in-out;
+            max-width: 90%;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hello h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .hello p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hello {
+                padding: 15px 20px;
+            }
+            .hello h1 {
+                font-size: 1.5rem;
+            }
+            .hello p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hello h1 {
+                font-size: 1.2rem;
+            }
+            .hello p {
+                font-size: 0.9rem;
+            }
+        }
+        </style>
+    </head>
 
 <body>
-    
     <header id="header">
         <div class="logo">
-            <a href="index.html"><img id="logo" src="hel.png" alt="Gritbyte Labs Logo" height="40"></a>
+            <a href="index.html"><img id="logo" src="Gritbyte Logo 1 (1).png" alt="Gritbyte Labs Logo" height="40"></a>
         </div>
         <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         <nav id="nav-menu">
@@ -909,129 +1058,170 @@
             <a href="Contact.html" class="cta-button">GET IN TOUCH</a>
         </nav>
     </header>
-    <div class="under-development">
-        <div class="under-development-container">
-            <h1> "This page is under construction."
-            </h1>
-            <p>tay tuned for the fantastics of Gritbyte here</p>
+
+    <section class="hello-section">
+        <div class="hello">
+            <h1>This page is under construction.</h1>
+            <p>Stay tuned for the fantastics of <strong>Gritbyte</strong> here.</p>
         </div>
+    </section>
+  
+    <div class="future-proof-section">
+        <div class="container60">
+            <div class="headline60">
+                <span>Future-proof your business in 2025.</span>
+                <span>Explore how Gritbyte Labs can empower your industry.</span>
+            </div>
+            <a href="Contact.html" class="button60">
+                Get in Touch<span class="arrow">→</span>
+            </a>
         </div>
-        <footer class="footer">
-            <hr>
-            <div class="footer-container">
-                <div class="footer-column">
-                    <div class="footer-text">
-                        <p>At Gritbyte Labs, we specialize in XR, AI, and scalable technology solutions that empower
-                            businesses worldwide. With 260+ successful projects across 20+ countries, we’re your trusted
-                            partner for innovation.</p>
-                        <a href="#" class="arrow">&#10145;</a>
-                    </div>
-                    <div class="certified-trusted">
-                        <div class="certified">
-                            <p>Certified by</p>
-                            <img src="certified.png" alt="Certified">
-                        </div>
-                        <div class="trusted">
-                            <p>Trusted by</p>
-                            <div class="trusted-images">
-                                <img src="pfzier.png" alt="Trusted">
-                                <img src="Hundai.png" alt="Trusted">
-                                <img src="bosch.png" alt="Trusted">
-                                <img src="rexorth.png" alt="Trusted">
-                            </div>
-                        </div>
-                    </div>
+    </div>
+   
+    <footer class="footer">
+        <hr>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-text">
+                    <p>At Gritbyte Labs, we specialize in XR, AI, and scalable technology solutions that empower
+                        businesses worldwide. With 260+ successful projects across 20+ countries, we’re your trusted
+                        partner for innovation.</p>
+                    <a href="#" class="arrow">&#10145;</a>
                 </div>
-                <div class="footer-column">
-                    <div class="footer-links">
-                        <a href="index.html">Home</a>
-                        <a href="Product.html">Products</a>
-                        <a href="Solutions.html">Solutions</a>
-                        <a href="Blog.html">Blog</a>
-                        <a href="CaseStudy.html">Case Studies</a>
-                        <a href="Contact.html">Contact Us</a>
+                <div class="certified-trusted">
+                    <div class="certified">
+                        <p>Certified by</p>
+                        <img src="certified.png" alt="Certified">
                     </div>
-                </div>
-                <div class="footer-column">
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/gritbyte/"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/company/gritbytelabs/"><i class="fab fa-linkedin-in"></i></a>
-                        <!-- <a href="#"><i class="fab fa-x-twitter"></i></a> -->
-    
-                        <a href="https://www.instagram.com/gritbyte/?hl=en"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <hr>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> <a href="tel:+918431962626">+91-8431962626</a></p>
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:contact@gritbyte.com">contact@gritbyte.com</a>
-                        </p>
-                    </div>
-                    <hr>
-                    <div class="location-row">
-                        <div class="location">
-                            <img src="India (IN).png" alt="Location">
-                            <p>Bangalore<br>Mysuru</p>
-                        </div>
-                        <div class="vertical-line"></div> <!-- Line between columns -->
-    
-                        <div class="location">
-                            <img src="South Korea (KR).png" alt="Location">
-                            <p>Seoul</p>
-                        </div>
-                        <div class="vertical-line"></div>
-    
-                        <div class="location">
-                            <img src="United Kingdom (GB).png" alt="Location">
-                            <p>London</p>
-                        </div>
-                        <div class="vertical-line"></div>
-    
-                        <div class="location">
-                            <img src="Canada (CA).png" alt="Location">
-                            <p>Toronto</p>
-                        </div>
-                        <div class="vertical-line"></div>
-    
-                        <div class="location">
-                            <img src="United Arab Emirates (AE).png" alt="Location">
-                            <p>Downtown <br>Dubai</p>
+                    <div class="trusted">
+                        <p>Trusted by</p>
+                        <div class="trusted-images">
+                            <img src="pfzier.png" alt="Trusted">
+                            <img src="Hundai.png" alt="Trusted">
+                            <img src="bosch.png" alt="Trusted">
+                            <img src="rexorth.png" alt="Trusted">
                         </div>
                     </div>
-    
-    
-    
                 </div>
             </div>
-            <hr>
-        </footer>
-        <div class="footer-bottom">
-            <p style="font-weight: bold;color: #000;" class="copyright">&copy; 2025 Gritbyte Labs. All Rights Reserved.</p>
-            <div class="footer-links-bottom">
-                <a href="TermsofUse.html">Terms & Conditions </a> |
-                <a href="FAQ.html">FAQs </a> |
-                <a href="PrivacyPolicy.html">Privacy Policy </a>
+            <div class="footer-column">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="Product.html">Products</a>
+                    <a href="Solutions.html">Solutions</a>
+                    <a href="Blog.html">Blog</a>
+                    <a href="CaseStudy.html">Case Studies</a>
+                    <a href="Contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/gritbyte/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/gritbytelabs/"><i class="fab fa-linkedin-in"></i></a>
+                    <!-- <a href="#"><i class="fab fa-x-twitter"></i></a> -->
+
+                    <a href="https://www.instagram.com/gritbyte/?hl=en"><i class="fab fa-instagram"></i></a>
+                </div>
+                <hr>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> <a href="tel:+918431962626">+91-8431962626</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:contact@gritbyte.com">contact@gritbyte.com</a>
+                    </p>
+                </div>
+                <hr>
+                <div class="location-row">
+                    <div class="location">
+                        <img src="India (IN).png" alt="Location">
+                        <p>Bangalore<br>Mysuru</p>
+                    </div>
+                    <div class="vertical-line"></div> <!-- Line between columns -->
+
+                    <div class="location">
+                        <img src="South Korea (KR).png" alt="Location">
+                        <p>Seoul</p>
+                    </div>
+                    <div class="vertical-line"></div>
+
+                    <div class="location">
+                        <img src="United Kingdom (GB).png" alt="Location">
+                        <p>London</p>
+                    </div>
+                    <div class="vertical-line"></div>
+
+                    <div class="location">
+                        <img src="Canada (CA).png" alt="Location">
+                        <p>Toronto</p>
+                    </div>
+                    <div class="vertical-line"></div>
+
+                    <div class="location">
+                        <img src="United Arab Emirates (AE).png" alt="Location">
+                        <p>Downtown <br>Dubai</p>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
-        <script>
-            document.addEventListener("contextmenu", function(event) {
+        <hr>
+    </footer>
+    <div class="footer-bottom">
+        <p style="font-weight: bold;color: #000;" class="copyright">&copy; 2025 Gritbyte Labs. All Rights Reserved.</p>
+        <div class="footer-links-bottom">
+            <a href="TermsofUse.html">Terms & Conditions </a> |
+            <a href="FAQ.html">FAQs </a> |
+            <a href="PrivacyPolicy.html">Privacy Policy </a>
+        </div>
+    </div>
+    <!-- <script>
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+        });
+    
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && (event.key === "u" || event.key === "U" || event.key === "i" || event.key === "I")) {
                 event.preventDefault();
-            });
-        
-            document.addEventListener("keydown", function(event) {
-                if (event.ctrlKey && (event.key === "u" || event.key === "U" || event.key === "i" || event.key === "I")) {
-                    event.preventDefault();
-                }
-                if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
-                    event.preventDefault();
-                }
-            });
-        </script>
-        
+            }
+            if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+                event.preventDefault();
+            }
+        });
+    </script> -->
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(
+                ".faq-container h1,.faq-title"
+            );
+
+            function revealOnScroll() {
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add("reveal");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll(); // Run on page load in case elements are already in view
+        });
+
+    </script>
+
     <script>
         function toggleMenu() {
             document.getElementById("nav-menu").classList.toggle("open");
         }
     </script>
 </body>
+
+
+
+
 
 </html>
